@@ -52,7 +52,7 @@ Unattended-Upgrade::Allowed-Origins {
     "${distro_id}:${distro_codename}-security";
     "${distro_id}ESMApps:${distro_codename}-apps-security";
     "${distro_id}ESM:${distro_codename}-infra-security";
-//  "${distro_id}:${distro_codename}-updates";
+    "${distro_id}:${distro_codename}-updates";
 //  "${distro_id}:${distro_codename}-proposed";
 //  "${distro_id}:${distro_codename}-backports";
 };
