@@ -17,11 +17,14 @@ APT_CONF_DIR="/etc/apt/apt.conf.d"
 AUTO_UPGRADES="${APT_CONF_DIR}/20auto-upgrades"
 UNATTENDED="${APT_CONF_DIR}/50unattended-upgrades"
 
+BACKUP_DIR="/root/apt-config-backups"
+
 backup() {
     local f="$1"
     if [[ -f "$f" ]]; then
-        cp -a "$f" "${f}.bak-${TS}"
-        echo "Backed up ${f} -> ${f}.bak-${TS}"
+        mkdir -p "$BACKUP_DIR"
+        cp -a "$f" "${BACKUP_DIR}/$(basename "$f").bak-${TS}"
+        echo "Backed up ${f} -> ${BACKUP_DIR}/$(basename "$f").bak-${TS}"
     fi
 }
 
